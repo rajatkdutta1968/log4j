@@ -8,3 +8,12 @@ severity score of 10.0
 
 Current Version: log4j version 2.16.0 
 (JNDI is fully disabled, support for Message Lookups is removed, and the new DoS vulnerability CVE-2021-45046 is not present)
+
+How to Works?
+=============
+ the Log4Shell vulnerability normally works by injecting a JNDI LDAP string into your logs, which triggers Log4j to reach out
+ to the specified LDAP server looking for more information. In a malicious scenario, the LDAP server can then serve code back
+ to the victim machine which will be automatically executed in-memory.
+ 
+ 
+ 
