@@ -1,0 +1,10 @@
+log4j
+------
+
+Java logging package
+
+CVE-2021-44228
+severity score of 10.0 
+
+Current Version: log4j version 2.16.0 
+(JNDI is fully disabled, support for Message Lookups is removed, and the new DoS vulnerability CVE-2021-45046 is not present)
