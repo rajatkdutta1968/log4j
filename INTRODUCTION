@@ -15,5 +15,27 @@ How to Works?
  to the specified LDAP server looking for more information. In a malicious scenario, the LDAP server can then serve code back
  to the victim machine which will be automatically executed in-memory.
  
+ PROBLEM
+ =========
+ It turns out that Log4j doesn’t just log plain strings. Text strings that are formatted a certain way will be executed
+ just like a line from a computer program. The problem is that this allows malicious actors to manipulate computers all
+ over the internet into taking actions without the computer owners’ wishes or permission.
+ 
+ Cyberattacks can use this to steal information, force actions, or extort the computer owners or operators.
+ 
+ PRESENT SITUATION:
+ ------------------
+ The first update — version 2.15.0 — was released on December 6, 2021. As exploitation ramped up in the wild, it became clear
+ that the update did not fully remediate the issue in all use cases, a vulnerability that the National Vulnerability Database
+ (NVD) codified as CVE-2021-45046.
+
+As a result, on December 13, the Apache Foundation released version 2.16.0, which completely removes support for message
+lookup patterns, thus slamming the door on JNDI functionality completely and possibly adding to development team backlogs
+to update material sections on their codebase that handle logging.
+
+
+
+ 
+ 
  
  
