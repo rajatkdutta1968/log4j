@@ -1,0 +1,30 @@
+THM's LOG4j walkthrough
+==========================
+
+1. to understand which ports are open:-
+
+nmap -v 10.10.118.129
+
+2. Now tried to find all ports which are open
+
+nmap -v -p- 10.10.118.129
+found 8983 port is open. So which software is running in that port?
+
+nmap -A -p8983 10.10.118.129
+
+PORT     STATE SERVICE VERSION
+8983/tcp open  http    Apache Solr
+|_http-favicon: Unknown favicon MD5: ED7D5C39C69262F4BA95418D4F909B10
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+| http-title: Solr Admin
+|_Requested resource was http://ip-10-10-118-129.eu-west-1.compute.internal:8983/solr/
+
+
+3. According to task the web application is using solr.apache and it is vulnerable to CVE-2021-44228. 
+This target machine is running Apache Solr 8.11.0 (Vulnerable to log4j)
+the application runs on Java 1.8.0_181
+
+
+
+Link to solr.apache: https://solr.apache.org/
